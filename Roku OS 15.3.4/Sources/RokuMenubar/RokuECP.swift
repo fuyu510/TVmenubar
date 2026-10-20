@@ -70,7 +70,7 @@ private final class RokuXML: NSObject, XMLParserDelegate {
 }
 
 final class RokuECP {
-    static let allowedKeys: Set<String> = ["Home", "Back", "Select", "Up", "Down", "Left", "Right", "Play", "Rev", "Fwd", "InstantReplay", "Info", "VolumeUp", "VolumeDown", "VolumeMute", "PowerOff", "ChannelUp", "ChannelDown"]
+    static let allowedKeys: Set<String> = ["Home", "Back", "Select", "Up", "Down", "Left", "Right", "Play", "Rev", "Fwd", "InstantReplay", "Info", "VolumeUp", "VolumeDown", "VolumeMute", "PowerOn", "PowerOff", "ChannelUp", "ChannelDown"]
     let host: String
     private let session: URLSession
     init(host: String) throws {

@@ -21,7 +21,7 @@ These previews use a generic TV name. Available channels and inputs are read fro
 - Dynamic app launcher with the TV's own icons and app search
 - Favorites saved locally on the Mac
 - Active HDMI input shown first and highlighted
-- Home, Back, OK, navigation, playback, TV volume, mute, channel, and power-off controls
+- Home, Back, OK, navigation, playback, TV volume, mute, channel, and power controls
 - Automatic discovery or manual private IPv4 address
 
 The app sends each remote command once per click. It does not run scheduled keypresses.
@@ -38,6 +38,8 @@ The app sends each remote command once per click. It does not run scheduled keyp
    ```
 
 The first launch searches for a Roku TV. You can enter its private IPv4 address in Settings if discovery does not find it. macOS 14 or newer and Xcode Command Line Tools are required to build.
+
+The power button turns the TV off when connected and sends `PowerOn` when it is off. To receive the wake command while the screen is off, the TV must remain reachable on the network. On compatible Roku TVs, enable **Settings → System → Power → Fast TV Start**. If the TV is fully disconnected from the network in standby, the app cannot wake it through Roku's local control protocol.
 
 ## Diagnostics
 

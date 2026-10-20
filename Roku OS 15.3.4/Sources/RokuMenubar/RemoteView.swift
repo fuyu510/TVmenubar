@@ -128,10 +128,13 @@ struct RemoteView: View {
                 Button("Quit Roku-menubar") { NSApplication.shared.terminate(nil) }
             } label: { Image(systemName: "ellipsis").font(.system(size: 16)).frame(width: 27, height: 30) }
                 .menuStyle(.borderlessButton).menuIndicator(.hidden).fixedSize()
-            Menu {
-                Button("Turn Roku TV off") { store.send("PowerOff") }.disabled(!store.connected)
+            Button {
+                if store.shouldPowerOn { store.powerOn() }
+                else { store.powerOff() }
             } label: { Image(systemName: "power").font(.system(size: 15)).frame(width: 30, height: 30) }
-                .menuStyle(.borderlessButton).menuIndicator(.hidden).fixedSize()
+                .buttonStyle(.plain).disabled(store.busy)
+                .help(store.shouldPowerOn ? "Turn Roku TV on" : "Turn Roku TV off")
+                .accessibilityLabel(store.shouldPowerOn ? "Turn Roku TV on" : "Turn Roku TV off")
         }
     }
     private var tabs: some View {

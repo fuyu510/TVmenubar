@@ -17,6 +17,7 @@ import Combine
     @Published var error: String?
     @Published var notice: String?
     @Published var preferredPanelHeight: CGFloat = 740
+    var shouldPowerOn: Bool { !connected || powerMode == "PowerOff" }
     private let defaultFavorites = ["12", "837", "13", "291097"]
     @Published var favorites: Set<String> = Set(UserDefaults.standard.stringArray(forKey: "roku.favorites") ?? ["12", "837", "13", "291097"])
     private var client: RokuECP?
@@ -145,6 +146,39 @@ import Combine
                 }
             }
             catch { self.error = error.localizedDescription }
+        }
+    }
+    func powerOn() {
+        let selected = host.trimmingCharacters(in: .whitespacesAndNewlines)
+        let powerClient: RokuECP
+        do { powerClient = try RokuECP(host: selected) }
+        catch { self.error = error.localizedDescription; return }
+        busy = true; error = nil; notice = nil
+        Task {
+            do {
+                try await powerClient.keypress("PowerOn")
+                powerMode = "PowerOn"
+                notice = "Power-on command sent. Reconnecting…"
+                try? await Task.sleep(for: .seconds(2))
+                connect()
+            } catch {
+                busy = false
+                self.error = "Could not reach the TV to turn it on. Enable Fast TV Start in Settings → System → Power on the TV, then try again."
+            }
+        }
+    }
+    func powerOff() {
+        guard let client else { error = "Connect to a Roku TV first."; return }
+        Task {
+            do {
+                try await client.keypress("PowerOff")
+                pollTask?.cancel(); pollTask = nil
+                connected = false
+                powerMode = "PowerOff"
+                activeApp = nil
+                notice = "TV off. Use the power button to turn it on."
+                error = nil
+            } catch { self.error = error.localizedDescription }
         }
     }
     func launch(_ app: RokuApp) {
