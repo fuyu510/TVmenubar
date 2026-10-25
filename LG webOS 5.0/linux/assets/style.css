@@ -19,8 +19,12 @@
 #lg-remote .primary label { color: #ffffff; }
 #lg-remote .quiet { background: transparent; border-color: transparent; padding: 6px 9px; }
 #lg-remote .quiet:hover { background: #eaf0f3; }
-#lg-remote .power { background: #fdf1f1; border-color: #f5dfdf; }
+#lg-remote .power, #lg-remote .power:hover { background: #147d75; border-color: #147d75; padding: 12px 14px; }
+#lg-remote .power:hover { background: #116b64; }
+#lg-remote .power label { color: #ffffff; font-size: 15px; font-weight: 700; }
+#lg-remote .connect-mini { padding: 8px; }
 #lg-remote .power.power-active, #lg-remote .power.power-active:hover { background: #c9474f; border-color: #c9474f; }
+#lg-remote .power.power-active:hover { background: #b23c44; }
 #lg-remote .power-tile { background: #b8c2cc; border-radius: 12px; padding: 9px; }
 #lg-remote .power-tile.power-on { background: #1f9d55; box-shadow: 0 0 0 4px alpha(#1f9d55, 0.18); }
 #lg-remote .power-tile.power-dim { background: #c9902a; box-shadow: 0 0 0 4px alpha(#c9902a, 0.18); }

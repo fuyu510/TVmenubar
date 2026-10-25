@@ -126,10 +126,11 @@ def build(remote):
     remote.status.set_max_width_chars(40)
     connection.pack_start(remote.status, False, False, 0)
     actions = row()
-    remote.connect_button = button("Connect TV", remote.toggle_connection, "plug", "primary", color="#ffffff")
-    remote.power_button = button("Turn TV on", remote.toggle_power, "power", "power", True, color="#b34c52")
-    actions.pack_start(remote.connect_button, True, True, 0)
-    actions.pack_end(remote.power_button, False, False, 0)
+    # The remote connects automatically, so power is the main action and Connect stays small.
+    remote.power_button = button("Turn TV on", remote.toggle_power, "power", "power", color="#ffffff")
+    remote.connect_button = button("Connect TV", remote.toggle_connection, "plug", "connect-mini", True)
+    actions.pack_start(remote.power_button, True, True, 0)
+    actions.pack_end(remote.connect_button, False, False, 0)
     connection.pack_start(actions, False, False, 0)
     root.pack_start(connection, False, False, 0)
 
@@ -313,17 +314,13 @@ def set_connection(remote, state):
     remote.badge.set_text(text)
     if css:
         style(remote.badge, css)
-    power_label = "Turn TV off…" if state == "connected" else "Turn TV on"
     remote.power_button.set_sensitive(True)
-    remote.power_button.get_accessible().set_name(power_label)
-    remote.power_button.set_tooltip_text(power_label)
     active = state in ("connected", "connecting", "pairing", "standby")
     text = "Disconnect" if state in ("connected", "standby") else "Cancel connection" if active else "Connect TV"
     remote.connect_button.get_child().destroy()
     content = row()
     content.set_halign(Gtk.Align.CENTER)
-    content.pack_start(image("unplug" if active else "plug", color="#ffffff"), False, False, 0)
-    content.pack_start(Gtk.Label(label=text), False, False, 0)
+    content.pack_start(image("unplug" if active else "plug", 18, "#69778a"), False, False, 0)
     remote.connect_button.add(content)
     remote.connect_button.get_accessible().set_name(text)
     remote.connect_button.set_tooltip_text(text)
@@ -354,15 +351,12 @@ def set_power(remote, state):
         remote.window.set_icon_from_file(str(icon))
         remote.show_tray_power(icon, text.lstrip("● "))
     on = state in ("on", "screen-off")
+    action = "Turn TV off" if on else "Turn TV on"
     context = remote.power_button.get_style_context()
-    if on == context.has_class("power-active"):
-        return
     context.add_class("power-active") if on else context.remove_class("power-active")
-    content = remote.power_button.get_child()
-    content.get_children()[0].destroy()
-    icon = image("power", color="#ffffff" if on else "#b34c52")
-    content.pack_start(icon, False, False, 0)
-    icon.show()
+    remote.power_button.get_child().get_children()[1].set_text(action)
+    remote.power_button.get_accessible().set_name(action)
+    remote.power_button.set_tooltip_text(action)
 
 
 def update_apps(remote, apps):
