@@ -32,6 +32,12 @@ SOFTWARE.
 
 ## Icons and brand assets
 
+The Linux companion bundles Lucide outline SVG icons, retrieved with Better Icons
+and adjusted to preserve their outline fills. Lucide is distributed under the ISC
+license; the complete notice is in `linux/assets/icons/LICENSE`. Its desktop app
+icon is original project artwork. The Linux app launcher reuses the bundled app
+branding described below.
+
 The LG, PlayStation, and Google Cast symbol assets were rendered from [Simple Icons](https://simpleicons.org/), whose artwork is distributed under [CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md). CC0 does not grant trademark rights.
 
 Other bundled app icons are third-party branding supplied through the LG app launcher. Their respective owners retain rights to their artwork and trademarks. The project's MIT license does not relicense those assets or imply endorsement by LG, Sony, Google, or other app vendors.

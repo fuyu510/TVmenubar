@@ -4,6 +4,8 @@ A native macOS menu bar remote for LG webOS TVs. Launch apps, switch HDMI inputs
 
 The app is called **LGwebOS-menubar**. This is a community project, independent of LG.
 
+**Linux / Ubuntu:** use the [Linux companion](linux/README.md) for a GTK remote and system tray menu. It provides the core TV controls; the macOS build instructions below do not apply to Linux.
+
 ## Preview
 
 <p align="center">

@@ -9,6 +9,8 @@ Native macOS menu bar remotes for TVs on your local network. Choose the app for 
 
 Both apps require **macOS 14 or later**, Xcode Command Line Tools, and a TV on the same local network as the Mac. They are community projects, independent of LG and Roku.
 
+**Using Linux?** The LG project also includes a [GTK desktop and system tray companion](LG%20webOS%205.0/linux/README.md) for Ubuntu/GNOME. It supports discovery, secure pairing, navigation, volume, apps, inputs and Wake-on-LAN without macOS or Swift.
+
 ## Build and open
 
 Clone the repository, then run **one** of these from its root:

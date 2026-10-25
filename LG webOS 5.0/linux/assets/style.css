@@ -1,0 +1,57 @@
+#lg-remote { background: #f3f5f7; color: #263449; font-family: "Inter", "Noto Sans", sans-serif; font-size: 13px; }
+#lg-remote label { color: #263449; }
+#lg-remote headerbar { background: #f3f5f7; border: none; box-shadow: none; min-height: 30px; }
+#lg-remote headerbar .title { font-size: 12px; font-weight: 600; color: #69778a; }
+#lg-remote headerbar button { padding: 3px 6px; min-height: 20px; border-color: transparent; }
+#lg-remote .title { font-size: 21px; font-weight: 800; letter-spacing: -0.5px; }
+#lg-remote .muted { color: #69778a; font-size: 12px; }
+#lg-remote .section-title { font-size: 14px; font-weight: 700; }
+#lg-remote .field-label { font-size: 12px; font-weight: 600; }
+#lg-remote .brand-mark { background: #147d75; border-radius: 14px; padding: 12px; }
+#lg-remote .card { background: #ffffff; border: 1px solid #e2e7ec; border-radius: 16px; padding: 15px; }
+#lg-remote button { background: #f5f7f9; background-image: none; color: #334155; border: 1px solid #e4e9ee; border-radius: 10px; padding: 9px 12px; box-shadow: none; text-shadow: none; min-height: 20px; font-weight: 600; }
+#lg-remote button:hover { background: #eaf0f3; border-color: #c8d4dd; }
+#lg-remote button:active { background: #d9e5e9; }
+#lg-remote button:focus { outline: 2px solid #168c80; outline-offset: -3px; }
+#lg-remote button:disabled { opacity: 0.48; }
+#lg-remote .primary, #lg-remote .primary:hover { background: #147d75; border-color: #147d75; }
+#lg-remote .primary:hover { background: #116b64; }
+#lg-remote .primary label { color: #ffffff; }
+#lg-remote .quiet { background: transparent; border-color: transparent; padding: 6px 9px; }
+#lg-remote .quiet:hover { background: #eaf0f3; }
+#lg-remote .power { background: #fdf1f1; border-color: #f5dfdf; }
+#lg-remote .power.power-active, #lg-remote .power.power-active:hover { background: #c9474f; border-color: #c9474f; }
+#lg-remote .power-tile { background: #b8c2cc; border-radius: 12px; padding: 9px; }
+#lg-remote .power-tile.power-on { background: #1f9d55; box-shadow: 0 0 0 4px alpha(#1f9d55, 0.18); }
+#lg-remote .power-tile.power-dim { background: #c9902a; box-shadow: 0 0 0 4px alpha(#c9902a, 0.18); }
+#lg-remote .power-state { color: #69778a; font-size: 12px; font-weight: 700; }
+#lg-remote .power-state.power-on { color: #1d7f47; }
+#lg-remote .power-state.power-dim { color: #8d651a; }
+#lg-remote .badge { padding: 5px 9px; border-radius: 20px; background: #edf0f4; color: #6a7789; font-size: 11px; font-weight: 600; }
+#lg-remote .badge.online { background: #e3f4ec; color: #27744b; }
+#lg-remote .badge.busy { background: #fff2d8; color: #8d651a; }
+#lg-remote .badge.error { background: #fbe9e8; color: #a13d45; }
+#lg-remote .tabs { background: #e8edf1; border-radius: 12px; padding: 4px; }
+#lg-remote .tabs button { border: none; background: transparent; border-radius: 9px; min-width: 62px; padding: 9px 6px; }
+#lg-remote .tabs button:checked { background: #ffffff; box-shadow: 0 1px 3px alpha(#1b2d40, 0.08); }
+#lg-remote .tabs button:checked label { color: #11786f; }
+#lg-remote .navigation { padding: 12px; }
+#lg-remote .shortcut { background: transparent; border-color: transparent; font-size: 11px; padding: 4px; }
+#lg-remote .shortcut:hover { background: #f0f5f7; }
+#lg-remote .direction-pad { background: #f0f4f6; border-radius: 100px; padding: 9px; margin: 2px 0; }
+#lg-remote .direction { background: transparent; border-color: transparent; border-radius: 30px; padding: 0; }
+#lg-remote .direction:hover { background: #dce9eb; }
+#lg-remote .confirm-key { background: #147d75; border-color: #147d75; border-radius: 32px; padding: 0; }
+#lg-remote .confirm-key label { color: white; font-size: 16px; font-weight: 800; }
+#lg-remote .confirm-key:hover { background: #10665f; }
+#lg-remote .volume-value { color: #147d75; font-weight: 700; }
+#lg-remote .muted-button { background: #e0f1ed; border-color: #9ccfc4; }
+#lg-remote entry { background: #ffffff; color: #263449; border: 1px solid #d9e1e8; border-radius: 9px; padding: 9px 11px; box-shadow: none; min-height: 20px; }
+#lg-remote entry:focus { border-color: #168c80; }
+#lg-remote combobox button { font-weight: 400; }
+#lg-remote .app-tile { background: white; padding: 16px 8px; border-radius: 14px; font-size: 12px; font-weight: 500; }
+#lg-remote .app-tile:hover { background: #eaf6f2; border-color: #8dbfb4; }
+#lg-remote .app-artwork { background: #e5ebef; border-radius: 10px; padding: 7px; }
+#lg-remote flowboxchild { padding: 0; }
+#lg-remote viewport { background: transparent; }
+#lg-remote .footer { font-size: 9px; letter-spacing: 1px; color: #8491a0; }
